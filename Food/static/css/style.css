@@ -1,0 +1,59 @@
+body {
+    background-color: #f8f9fa; /* Light gray background for a clean look */
+    font-family: Arial, sans-serif; /* Modern font */
+}
+
+.navbar {
+    border-bottom: 2px solid #343a40; /* Dark bottom border for the navbar */
+}
+
+.nav-link {
+    font-weight: bold; /* Bold links for better visibility */
+}
+
+.card {
+    border-radius: 10px; /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.form-control, .form-control-file {
+    border-radius: 5px; /* Rounded input fields */
+}
+
+.btn {
+    border-radius: 5px; /* Rounded buttons */
+    padding: 10px 20px; /* Comfortable padding for buttons */
+}
+
+.table {
+    border-radius: 10px; /* Rounded corners for table */
+    overflow: hidden; /* Ensures rounded corners are visible */
+}
+
+.table thead {
+    background-color: #28a745; /* Bootstrap primary color */
+    color: white; /* White text for contrast */
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef; /* Light gray hover effect */
+}
+
+footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white; /* White text for readability */
+    padding: 20px 0; /* Padding for the footer */
+}
+
+footer .form-outline {
+    color: white; /* Change form label color to white */
+}
+
+.footer a {
+    color: #f8f9fa; /* Light color for footer links */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+

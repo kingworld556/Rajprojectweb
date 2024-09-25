@@ -1,0 +1,84 @@
+{% extends "basefile.html" %}
+{% block start %}
+{% load static %}
+<br><br><br><br>
+<div class="register-container" >
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+<form method="POST" enctype="multipart/form-data" class = 'card p-3 bg-light'>
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="recipe_name"> Recipe Name </label>
+        <input type="text" class="form-control" id="recipe_name" name="r_name" required><br><br>
+    </div>
+    <div class="form-group">
+        <label for="recipe_description"> Description </label>
+        <textarea id="recipe_description" class="form-control" name="r_description" rows="4" style="width:300px" required> </textarea><br><br>
+    </div>
+    <div class="form-group">
+        <label for="recipe_file"> Upload Recipe Image </label>
+        <input type="file" class="form-control" id="recipe_file" name="r_image" required><br><br>
+        <label for="r_video">Upload Video:</label>
+        <input type="file" name="r_video" id="r_video" accept="video/*"><br>
+    </div><br><br>
+
+    <button type="submit" class="btn btn-dark"> Submit </button><br><br>
+
+</form><br><br>
+        </div>
+    </div>
+</div>
+<div class="mt-3">
+    <form>
+        <div class="form-group col-md-4 card p-3 bg-light">
+            <label for="search"> Search Recipes </label>
+            <input type="text" id="search" name="search" class="form-control">
+        </div><br><br>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</div><br><br>
+
+
+
+<table class="table table-bordered">
+    
+    <thead style="background-color: green;">
+        <tr>
+            <th> S_No </th>
+            <th> Recipe Name </th>
+            <th> Recipe Description </th>
+            <th> Recipe Image </th>
+            <th> Action </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in recipe %}
+        <tr>
+            <td> {{forloop.counter }} </td>
+            <td> {{r.r_name }} </td>
+            <td> {{r.r_description }} </td>
+            <td> <img src="{{ r.r_image.url }}" alt="recipe image" class="img-thumbnail" style="width:300px;height:200px;"> </td>
+            <td> <a class="btn btn-danger" href="/delete_recipe/{{r.id}}"> delete </a> <br><br>
+                 <a class="btn btn-success" href="/update_recipe/{{r.id}}"> update </a> </td>
+                 <td>
+                    {% if r.r_video %}
+                        <video width="150" height="200" controls>
+                            <source src="{{ r.r_video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% else %}
+                        No video available
+                    {% endif %}
+                </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block start %}
+
+<br>
+<br>
+<br>
+<table class="table table-bordered table-striped table-hover table-dark">
+  
+  <tr>
+    <th>S.no</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th> eligibility of vote </th>
+  </tr>
+
+  <tr>
+    {% for s in p %}
+    <td>{{forloop.counter}}</td>
+    <td>{{s.name}}</td>
+    <td>{{s.age}}</td>
+    <td{% if s.age < 18 %} style="background:red;" {% endif %}>
+      {% if s.age > 17 %}
+      yes eligible
+      {% else %}
+      Not eligible
+      {% endif %} 
+   </td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+{% endblock %}

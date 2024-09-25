@@ -1,0 +1,25 @@
+
+{% extends "basee.html" %}
+{% block start %}
+<br><br><br><br>
+  <div class="register-container" >
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <form method='POST' class = 'card p-3 bg-light'>
+          {% csrf_token %}
+          <div class="form-group">
+         <label for='n1'>Enter Number:</label><br>
+         <input type="text" id="n1" class="form-control" name="n1"><br></br>
+         <button type="submit" class="btn btn-primary"> check </button>
+         <br><br>
+         <label> Result: </label>
+         <input type="text" id="result" class="form-control" name="result" value="{{result}}" readonly>
+          </div>
+         </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<br><br><br><br>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "basee.html" %}
+{% block start %}
+
+<br><br><br><br>
+  <div class="register-container" >
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+<form method='POST' class = 'card p-3 bg-light'>
+   {% csrf_token %}
+   <h2> Marksheet </h2>
+   <div class="form-group">
+  <label for='subject1'>First subject:</label><br>
+  <input type="text" id="subject1" class="form-control" name="subject1" placeholder="Enter the marks" required><br><br>
+
+  <label for='subject2'>Second subject:</label><br>
+  <input type="text" id="subject2" class="form-control" name="subject2" placeholder="Enter the marks" required><br><br>
+
+  <label for='subject3'>Third subject:</label><br>
+  <input type="text" id="subject3" class="form-control" name="subject3" placeholder="Enter the marks" required><br><br>
+
+  <label for='subject4'>Fourth subject:</label><br>
+  <input type="text" id="subject4" class="form-control" name="subject4" placeholder="Enter the marks" required><br><br>
+
+  <label for='subject5'>Fifth subject:</label><br>
+  <input type="text" id="subject5" class="form-control" name="subject5" placeholder="Enter the marks" required><br><br>
+
+  <button type="submit" class="btn btn-primary">Submit</button><br><br>  
+
+  <label>Result:</label><br><br>
+  <input type="text" id="tot" class="form-control" name="tot" value="{{ tot }}" readonly><br><br>
+  <input type="text" id="per" class="form-control" name="per" value="{{ per }}"><br><br>
+  <input type="text" id="grade" class="form-control" name="grade" value="{{ grade }}" readonly>
+   </div>
+</form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<br><br><br><br>
+{% endblock %}

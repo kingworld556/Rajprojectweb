@@ -1,0 +1,26 @@
+{% extends "basefile.html" %}
+{% block start %}
+<br><br><br><br>
+<div class="container mt-5">
+    <h2> Update Recipe </h2>
+    <form method="POST" enctype="multipart/form-data" class="mb-3">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="recipe_name"> Recipe Name </label>
+            <input type="text" id="recipe_name" name="r_name" class="form-control" value="{{recipe.r_name}}"><br><br>
+        </div>
+        <div class="form-group">
+            <label for="recipe_description"> Description </label>
+            <textarea id="recipe_description" name="r_description" rows="4" style="width:300px" class="form-control"> {{recipe.r_description}} </textarea><br><br>
+        </div>
+        <div class="form-group">
+            <label for="recipe_file" class="form-label"> Upload Recipe Image </label>
+            <input type="file" id="recipe_file" name="r_image" class="form-control-file" >
+            {% if recipe.r_image %}
+            <img src="{{recipe.r_image.url}}" alt="Recipe Image" class="img-thumbnail mt-2" style="width:300px;height:200px;">
+            {% endif %}
+        </div> 
+        <button type="submit" class="btn btn-primary"> Update </button>
+    </form> 
+</div>
+{% endblock %}

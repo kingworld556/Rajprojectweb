@@ -1,0 +1,24 @@
+{% extends "basee.html" %}
+{% block start %}
+<br><br><br><br>
+  <div class="register-container" >
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+<form method='POST' class = 'card p-3 bg-light'>
+  {% csrf_token %}
+  <div class="form-group">
+  <label for='num1'>First number:</label><br>
+  <input type="text" class="form-control" id="n1" name="num1" required><br></br>
+  <label for='num2'>second number:</label>
+  <input type="text" class="form-control" id="n2" name="num2" required><br><br>
+  <button type="submit" class="btn btn-primary"> Sum </button><br><br>
+  <div> Result: {{ans}} </div>
+  </div>
+</form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<br><br><br><br>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'bases.html'%}
+{% block start %}
+<br><br><br><br>
+<div class="container" >
+<h2 class="text-center mb-4"> Send an email </h2>
+<form method="POST" class="p-4 border rounded bg-light  shadow-sm" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-primary"> Send </button>
+</form>
+</div>
+<br><br><br><br>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "basefile.html" %}
+{% block start %}
+<br><br><br><br>
+<div class="login-container" >
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+    <h2 align="center"> Login Page </h2>
+    <form  method="POST" class = 'card p-3 bg-light'>
+        {% csrf_token %}
+        <div class="form-group" align="center">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+        <input type="submit" value="login" class="btn btn-primary">
+        </div>
+    </form>
+    <div class="register-link">
+        <p>Don't have an account? <a href="/register/"> register here </a></p>
+    </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

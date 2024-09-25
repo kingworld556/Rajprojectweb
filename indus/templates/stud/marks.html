@@ -1,0 +1,32 @@
+{% extends "basees.html" %}
+{% block start %}
+<br><br>
+<div class="container mt-5">
+    <h1 style="color:red;" class="mb-4"> Student Marks </h1>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th> Subjects </th>
+                <th> Marks </th>
+            </tr>
+        </thead>
+        <tbody class="table-light">
+            {% for mark in queryset %}
+            <tr>
+                <td> {{ mark.subject }} </td>
+                <td> {{ mark.marks }} </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th> Total Marks </th>
+                <td> {{ totalmarks.totalmarks }} </td>
+            </tr>
+            <tr>
+                <th> Rank </th>
+                <td> {{ rank }} </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'stud' %}" class="btn btn-primary btn-sm mb-4"> Back to Students </a>
+</div>
+{% endblock %}
